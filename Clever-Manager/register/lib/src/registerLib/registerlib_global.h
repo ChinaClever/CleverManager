@@ -1,0 +1,13 @@
+﻿#ifndef REGISTERLIB_GLOBAL_H
+#define REGISTERLIB_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(REGISTERLIB_LIBRARY)
+#  define REGISTERLIBSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define REGISTERLIBSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // REGISTERLIB_GLOBAL_H
+

@@ -1,0 +1,144 @@
+﻿/*
+ * barcharts.cpp
+ * 设备工作状态柱形图
+ *  设备总线、在线设备数量、报警数量、离线数量的柱形图
+ *
+ *  Created on: 2016年10月11日
+ *      Author: Lzy
+ */
+#include "barcharts.h"
+
+BarCharts::BarCharts(QWidget *parent) : QWidget(parent)
+{
+    m_drawChart = new DrawChart(this);
+    layout = new QGridLayout(this);
+    layout->addWidget(m_drawChart);
+//    layout->setSpacing(0);
+//    layout->setContentsMargins(0, 0, 0, 0);
+
+
+    initBars();
+    setColors();
+    initXAxis();
+}
+
+BarCharts::~BarCharts()
+{
+}
+
+/**
+ * @brief 初始化
+ */
+void BarCharts::initBars(void)
+{
+    numberBar = m_drawChart->createBar(tr("总数"));
+    lineBar = m_drawChart->createBar(tr("在线"));
+    alarmBar = m_drawChart->createBar(tr("报警"));
+    offLineBar = m_drawChart->createBar(tr("离线"));
+}
+
+/**
+ * @brief 设置颜色
+ */
+void BarCharts::setColors(void)
+{
+    QPen pen;
+    pen.setWidthF(1.2);
+    pen.setColor(QColor(255,0,0));
+    alarmBar->setPen(pen);
+    alarmBar->setBrush(QColor(255,0,0));
+
+    pen.setColor(QColor(188,188,188));
+    offLineBar->setPen(pen);
+    offLineBar->setBrush(QColor(188,188,188));
+
+    pen.setColor(QColor(1,255,0));
+    lineBar->setPen(pen);
+    lineBar->setBrush(QColor(1,255,0));
+
+    pen.setColor(QColor(0,204,255));
+    numberBar->setPen(pen);
+    numberBar->setBrush(QColor(0,204,255));
+}
+
+/**
+ * @brief 设置X轴
+ */
+void BarCharts::initXAxis(void)
+{
+    QVector<QString> labels;
+    labels << tr("总数")<< tr("在线")<< tr("报警")<< tr("离线");
+
+    m_drawChart->initXAxis(labels);
+}
+
+/**
+ * @brief 设置Y轴范围
+ */
+void BarCharts::setRange(int data)
+{
+    static int range=0;
+    if(range < data)
+    {
+        range = data + data/5;
+        m_drawChart->setRange(range);
+    }
+}
+
+void BarCharts::setNumData(int data)
+{
+    QVector<double> ticks;
+    ticks << 1;
+
+    QVector<double> vecData;
+    vecData << data;
+
+    setRange(data);
+  //  numberBar->clearData();
+    numberBar->setData(ticks, vecData);
+}
+
+void BarCharts::setLineData(int data)
+{
+    QVector<double> ticks;
+    ticks << 2;
+
+    QVector<double> vecData;
+    vecData << data;
+    lineBar->setData(ticks, vecData);
+}
+
+void BarCharts::setAlarmData(int data)
+{
+    QVector<double> ticks;
+    ticks << 3;
+
+    QVector<double> vecData;
+    vecData << data;
+
+    alarmBar->setData(ticks, vecData);
+}
+
+void BarCharts::setOffLineData(int data)
+{
+    QVector<double> ticks;
+    ticks << 4;
+
+    QVector<double> vecData;
+    vecData << data;
+
+    offLineBar->setData(ticks, vecData);
+}
+
+/**
+ * @brief 设置数据
+ */
+void BarCharts::setData(BarChart_Data *data)
+{
+    setNumData(data->number);
+    setLineData(data->line);
+    setAlarmData(data->alarm);
+    setOffLineData(data->offLine);
+
+    m_drawChart->customPlot->replot();
+}

@@ -1,0 +1,86 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>box_back.jpg</file>
+        <file>title_back.jpg</file>
+        <file>logo.jpg</file>
+        <file>devType.png</file>
+        <file>group.png</file>
+        <file>im.png</file>
+        <file>doubt4.png</file>
+        <file>2.png</file>
+        <file>3.png</file>
+        <file>1203596.png</file>
+        <file>1205806.png</file>
+        <file>1.png</file>
+        <file>title_bar.png</file>
+        <file>other/icon_close.png</file>
+        <file>other/switch-off-icon.png</file>
+        <file>other/switch-on-icon.png</file>
+        <file>other/back.png</file>
+        <file>usr_land.jpg</file>
+        <file>other/serach.png</file>
+        <file>other/line.png</file>
+    </qresource>
+    <qresource prefix="/devstatus">
+        <file>dev/devalarm.jpg</file>
+        <file>dev/devnormal.jpg</file>
+        <file>dev/devoffline.jpg</file>
+        <file>dev/dev.jpg</file>
+    </qresource>
+    <qresource prefix="/output">
+        <file>output/opalarm.jpg</file>
+        <file>output/opclose.jpg</file>
+        <file>output/opnormal.jpg</file>
+        <file>output/opopen.jpg</file>
+    </qresource>
+    <qresource prefix="/topology">
+        <file>topology/1.png</file>
+        <file>topology/2.png</file>
+        <file>topology/ask.png</file>
+        <file>topology/cmm.png</file>
+        <file>topology/deng.png</file>
+        <file>topology/deng2.png</file>
+        <file>topology/fou.png</file>
+        <file>topology/guan.png</file>
+        <file>topology/jh.png</file>
+        <file>topology/jia.png</file>
+        <file>topology/kai.png</file>
+        <file>topology/shi.png</file>
+        <file>topology/xg.png</file>
+        <file>topology/yd.png</file>
+        <file>topology/hj.png</file>
+        <file>topology/jj.png</file>
+        <file>topology/st.png</file>
+        <file>topology/guan_.png</file>
+        <file>topology/kai_.png</file>
+    </qresource>
+    <qresource prefix="/tg">
+        <file>tg/admin.png</file>
+        <file>tg/usr.png</file>
+        <file>tg/down.png</file>
+        <file>tg/up.png</file>
+    </qresource>
+    <qresource prefix="/toolbutton">
+        <file>toolbutton/tg_clicked.png</file>
+        <file>toolbutton/tg_select.png</file>
+        <file>toolbutton/detail_clicked.png</file>
+        <file>toolbutton/detail_select.png</file>
+        <file>toolbutton/dev_clicked.png</file>
+        <file>toolbutton/dev_select.png</file>
+        <file>toolbutton/log_clicked.png</file>
+        <file>toolbutton/log_select.png</file>
+        <file>toolbutton/ser_clicked.png</file>
+        <file>toolbutton/ser_select.png</file>
+        <file>toolbutton/usr_clicked.png</file>
+        <file>toolbutton/usr_select.png</file>
+        <file>toolbutton/tg_normal.png</file>
+        <file>toolbutton/ser_normal.png</file>
+        <file>toolbutton/log_normal.png</file>
+        <file>toolbutton/dev_normal.png</file>
+        <file>toolbutton/detail_normal.png</file>
+        <file>toolbutton/usr_normal.png</file>
+        <file>toolbutton/topo_clicked.png</file>
+        <file>toolbutton/topo_select.png</file>
+        <file>toolbutton/topo_normal.png</file>
+    </qresource>
+</RCC>
